@@ -10,7 +10,7 @@ function GameView(InputManager, Actuator, StorageManager) {
 
 	this.inputManager.on("move", this.move.bind(this));
 
-	var state = this.storageManager.getGameState();
+	var state =  this.storageManager.getGameState();
 
 	if(state){
 		this.level = state ? state : 0;
@@ -51,8 +51,10 @@ GameView.prototype.nextLevel = function() {
 	while (gridContainer.firstChild) {
 		gridContainer.removeChild(gridContainer.firstChild);
 	}
+	
 
 	this.setup(this.level);
+	
 }
 
 GameView.prototype.startTutorial = function(level) {
@@ -63,6 +65,10 @@ GameView.prototype.startTutorial = function(level) {
 
 
 GameView.prototype.setup = function(levelId) {
+	if(levelId >= 32){
+			this.showFinishScreen();
+			return;
+	}
 
     var season = this.getSeasonId(levelId);
     var jsonData = this.getSeasonData(season)
@@ -337,4 +343,39 @@ GameView.prototype.getSeasonData = function(season) {
 	}
 	
 	return seasonData;
+}
+
+GameView.prototype.showFinishScreen = function() {
+	var tutorialLabel = document.getElementsByClassName("tutorial-label")[0];
+	tutorialLabel.innerHTML = "";
+	
+	var gameContainer = document.getElementsByClassName("game-container")[0];
+	
+	var levelTitle = document.getElementsByClassName("level-title")[0];
+	levelTitle.innerHTML = "Browser version contains only 32 levels. The full version with more than 100 levels";
+	
+	
+	var container = document.getElementsByClassName("container")[0];
+	container.style.height = 0 + "px";
+	container.style.minHeight = 0 + "px";
+	
+	var storeContainer = document.getElementsByClassName("store-container")[0];
+	storeContainer.style.marginTop = "700px";
+	//container heigth = "0px";
+	//store-container
+	//margin-top: 600px;
+	
+	var color = rgb(0, 97, 0);
+	var body = document.body;
+	body.style.color = color;
+	body.style.background = color;
+	
+	var tutorialLabel = document.getElementsByClassName("store-label");
+	for(var i = 0; i < tutorialLabel.length; i++){
+		tutorialLabel[i].style.color = color;
+	}
+	
+	this.actuator.setColor(color);
+	this.actuate();
+	this.actuator.startLelel();
 }

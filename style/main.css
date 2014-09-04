@@ -22,7 +22,7 @@ h1.title {
   font-size: 70px;
   width: 500;
   text-align: center;
-  
+  margin-bottom: 0px;
   float: center; 
 }
 
@@ -38,6 +38,7 @@ h1.title {
 
 .level-info {
   width: 330px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   content: "";
@@ -213,7 +214,6 @@ hr {
     margin-top: 26px;
     font-weight: bold;
     text-align: center;
-    width: 400px;
     display: block;
     float: center; 
   }
