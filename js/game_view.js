@@ -10,7 +10,7 @@ function GameView(InputManager, Actuator, StorageManager) {
 
 	this.inputManager.on("move", this.move.bind(this));
 
-	var state =  this.storageManager.getGameState();
+	var state = this.storageManager.getGameState();
 
 	if(state){
 		this.level = state ? state : 0;
@@ -374,6 +374,10 @@ GameView.prototype.showFinishScreen = function() {
 	for(var i = 0; i < tutorialLabel.length; i++){
 		tutorialLabel[i].style.color = color;
 	}
+	
+	gameContainer.innerHTML = storeContainer.innerHTML;
+	storeContainer.innerHTML = "";
+	
 	
 	this.actuator.setColor(color);
 	this.actuate();
