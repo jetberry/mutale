@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MUTILE</title>
+  <title>MUTALE</title>
 
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
@@ -14,6 +14,16 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-52691443-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
   
 </head>
 <body>
@@ -26,7 +36,7 @@
   
   <div class="container">
     <div class="heading">
-      <h1 class="title">M U T I L E</h1>
+      <h1 class="title">M U T A L E</h1>
 	  <a class="store-label" href="http://jetberry.com"  target='_blank'>by jetberry.com</a>
     </div>
 	<div class="level-info">
@@ -60,10 +70,10 @@
   
 <div class="store-container">
 	<p class="store-label" style = "font-size: 30px;">Get it on:</p>
-      <a class="store-label" href="https://itunes.apple.com/us/app/mutile/id904732348"  target='_blank'>iOS App Store</a>
-	  <a class="store-label" href="https://play.google.com/store/apps/details?id=com.jetberry.mutile"  target='_blank'>Google Play</a>
-	  <a class="store-label" href="http://www.amazon.com/Ostap-Ostaschenko-MUTILE/dp/B00ML0B0RO"  target='_blank'>Amazon Store</a>
-	  <a class="store-label" href="https://itunes.apple.com/us/app/mutile/id905753563"  target='_blank'">Mac App Store</a>
+      <a class="store-label" href="https://itunes.apple.com/us/app/mutile/id904732348"  target='_blank' onclick="ga('send', 'event', 'bubble_flurry', 'click', 'mutale ios');">iOS App Store</a>
+	  <a class="store-label" href="https://play.google.com/store/apps/details?id=com.jetberry.mutile"  target='_blank' onclick="ga('send', 'event', 'bubble_flurry', 'click', 'mutale google play');">Google Play</a>
+	  <a class="store-label" href="http://www.amazon.com/Ostap-Ostaschenko-MUTILE/dp/B00ML0B0RO"  target='_blank'  onclick="ga('send', 'event', 'bubble_flurry', 'click', 'mutale Amazon');">Amazon Store</a>
+	  <a class="store-label" href="https://itunes.apple.com/us/app/mutile/id905753563"  target='_blank' onclick="ga('send', 'event', 'bubble_flurry', 'click', 'mutale mac');">Mac App Store</a>
 	  <a class="store-label" href="https://github.com/jetberry/mutile"  target='_blank'">GitHub</a>
 	  
 </div>
