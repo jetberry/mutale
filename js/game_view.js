@@ -13,7 +13,7 @@ function GameView(InputManager, Actuator, StorageManager) {
 	var p_url=location.search.substring(1);
 	initLocal();
 
-	var state = 0;//this.storageManager.getGameState();
+	var state = this.storageManager.getGameState();
 	
 	if(state){
 		this.level = state ? state : 0;
