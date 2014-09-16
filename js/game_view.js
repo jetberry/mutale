@@ -11,7 +11,7 @@ function GameView(InputManager, Actuator, StorageManager) {
 	this.inputManager.on("move", this.move.bind(this));
 
 	var p_url=location.search.substring(1);
-	setLocal(p_url);
+	initLocal();
 
 	var state = 0;//this.storageManager.getGameState();
 	

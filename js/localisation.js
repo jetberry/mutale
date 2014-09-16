@@ -19,7 +19,17 @@ kLocalDic = {
 
 kLocal = "";
 
-function setLocal(local){
+function initLocal(){
+	var p_url=location.search.substring(1);
+	var parametr=p_url.split("&");
+	var values= new Array();
+	for(i in parametr) {
+	    var j=parametr[i].split("=");
+	    values[j[0]]=unescape(j[1]);
+	}
+	
+	var local = values["localisation"];
+	
 	if(local == "en" || local == "ru"){
 		kLocal = local;
 	}else{
