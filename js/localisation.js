@@ -29,7 +29,7 @@ function initLocal(){
 	}
 	
 	var local = values["localisation"];
-	
+
 	if(local == "en" || local == "ru"){
 		kLocal = local;
 	}else{
