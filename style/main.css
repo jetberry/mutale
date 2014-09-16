@@ -218,6 +218,15 @@ hr {
     float: center; 
   }
   
+  .store-label-header{
+  	font-size: 30px;
+	margin-top: 26px;
+	font-weight: bold;
+    text-align: center;
+    display: block;
+    float: center; 
+  }
+  
   .store-container {
     width: 400px;
 	margin-top: -40px;

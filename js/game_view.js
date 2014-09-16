@@ -10,8 +10,11 @@ function GameView(InputManager, Actuator, StorageManager) {
 
 	this.inputManager.on("move", this.move.bind(this));
 
-	var state = this.storageManager.getGameState();
+	var p_url=location.search.substring(1);
+	setLocal(p_url);
 
+	var state = 0;//this.storageManager.getGameState();
+	
 	if(state){
 		this.level = state ? state : 0;
 		this.setup(this.level);
@@ -83,9 +86,9 @@ GameView.prototype.setup = function(levelId) {
 	
 	var levelTitle = document.getElementsByClassName("level-title")[0];
 	if(levelId < 0){
-		levelTitle.innerHTML = "Tutorial";
+		levelTitle.innerHTML = getLocalString("TUTORIAL");
 	}else{
-		levelTitle.innerHTML = "Level " + (levelId + 1);
+		levelTitle.innerHTML = getLocalString("LEVEL") + (levelId + 1);
 	}
 
 	var body = document.body;
@@ -136,10 +139,16 @@ GameView.prototype.setup = function(levelId) {
 			}
 		}
 	}
+	
+	var getItOn = document.getElementsByClassName("store-label-header")[0];
+	getItOn.innerHTML = getLocalString("GET_IT_ON");
+	
 	if(levelId < 0){
+		var tutorialLabel = document.getElementsByClassName("tutorial-label")[0];
+		tutorialLabel.innerHTML = getLocalString("TUTORIAL_1");
 	}else if(levelId == 0){
 		var tutorialLabel = document.getElementsByClassName("tutorial-label")[0];
-		tutorialLabel.innerHTML = "Great! Now try to move the frame to the shown place";
+		tutorialLabel.innerHTML = getLocalString("TUTORIAL_2");
 	}else{
 		var tutorialLabel = document.getElementsByClassName("tutorial-label")[0];
 		tutorialLabel.innerHTML = "";
@@ -352,8 +361,7 @@ GameView.prototype.showFinishScreen = function() {
 	var gameContainer = document.getElementsByClassName("game-container")[0];
 	
 	var levelTitle = document.getElementsByClassName("level-title")[0];
-	levelTitle.innerHTML = "Browser version contains only 32 levels. The full version with more than 100 levels";
-	
+	levelTitle.innerHTML = getLocalString("FINISH");;
 	
 	var container = document.getElementsByClassName("container")[0];
 	container.style.height = 0 + "px";
